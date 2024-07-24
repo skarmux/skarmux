@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+
+/* hide page scrollbar */
+html {
+  scrollbar-width: none;
+} /* Firefox */
+body {
+  -ms-overflow-style: none;
+} /* IE and Edge */
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-button {
+  display: none;
+} /* Chrome */
+/* end hide page scrollbar */
+
+/* hide invisible elements before alpine js is initialized */
+[x-cloak] {
+  display: none !important;
+}
+
+/* button */
+.btn {
+  @apply dark:text-ctp-mocha-base dark:bg-ctp-mocha-mauve dark:border-ctp-mocha-mauve text-ctp-latte-base bg-ctp-latte-mauve border-ctp-latte-mauve py-2 px-6 text-lg font-semibold text-center border-2 rounded-md;
+}
+.btn:hover {
+  @apply text-ctp-latte-text bg-transparent dark:text-ctp-mocha-mauve;
+}
+/* end button */
+
+/* input */
+.input {
+  @apply text-ctp-latte-mauve caret-ctp-latte-mauve dark:text-ctp-mocha-mauve dark:caret-ctp-mocha-mauve dark:bg-transparent dark:border-ctp-mocha-surface-200 bg-transparent border-ctp-latte-surface-200 font-semibold py-2 px-4 text-sm rounded-md border-2;
+}
+.input:hover {
+  @apply border-ctp-latte-text dark:border-ctp-mocha-text;
+}
+.input:focus {
+  @apply border-ctp-latte-mauve dark:border-ctp-mocha-mauve outline-none;
+}
+/* end input */
+
+@tailwind utilities;
