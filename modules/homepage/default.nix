@@ -37,10 +37,10 @@ in
       };
     };
 
-    services.nginx.virtualHosts = lib.mkIf cfg.enableNginx {
+    services.nginx.virtualHosts = {
       "${cfg.domain}" = {
-        enableACME = cfg.enableTLS;
-        forceSSL = cfg.enableTLS;
+        enableACME = true;
+        forceSSL = true;
         root = "${inputs.self.packages.${system}.homepage}/www";
         locations."/" = {
           tryFiles = "$uri $uri/ /index.html";
