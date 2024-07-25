@@ -19,6 +19,7 @@
     in {
 
       packages = rec {
+        homepage = homepage;
         default = homepage;
       };
 
