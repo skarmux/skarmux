@@ -9,7 +9,7 @@ in
   options = {
     services.homepage = {
       enable = lib.mkEnableOption ''
-      Feaston event contribution planner     
+      My personal Homepage. Try not to steal my swag.     
       '';
       package = lib.mkOption {
         type = lib.types.package;

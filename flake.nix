@@ -15,7 +15,7 @@
     
     perSystem = { pkgs, ... }:
     let
-      homepage = pkgs.callPackage ./feaston-static.nix {};
+      homepage = pkgs.callPackage ./homepage.nix {};
     in {
 
       packages = {
