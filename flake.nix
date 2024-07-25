@@ -18,7 +18,7 @@
       homepage = pkgs.callPackage ./feaston-static.nix {};
     in {
 
-      packages = rec {
+      packages = {
         homepage = homepage;
         default = homepage;
       };
