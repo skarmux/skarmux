@@ -39,8 +39,8 @@ in
 
     services.nginx.virtualHosts = {
       "${cfg.domain}" = {
-        enableACME = true;
-        forceSSL = true;
+        # enableACME = true;
+        # forceSSL = true;
         root = "${inputs.self.packages.${system}.homepage}/www";
         locations."/" = {
           tryFiles = "$uri $uri/ /index.html";
