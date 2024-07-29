@@ -7,7 +7,7 @@ pkgs.stdenv.mkDerivation {
   src = pkgs.lib.cleanSourceWith {
     src = ./.;
     filter = path: type: pkgs.lib.any (suffix: pkgs.lib.hasSuffix suffix (baseNameOf path)) [
-      ".js" ".html" ".css" ".webp" ".ico" ".json"
+      ".js" ".html" ".css" ".webp" ".ico" ".json" ".txt"
     ] || type == "directory";
     name = "source";
   };
