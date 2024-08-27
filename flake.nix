@@ -10,7 +10,7 @@
     systems = [ "x86_64-linux" "aarch64-linux" ];
     
     flake = {
-      nixosModules.default = import ./modules/homepage/default.nix inputs;
+      nixosModules.default = import ./nix/module/homepage.nix inputs;
     };
     
     perSystem = { pkgs, ... }:
@@ -25,15 +25,15 @@
 
       devShells.default = pkgs.mkShell {
 
-        DATABASE_URL="sqlite:./db.sqlite?mode=rwc";
-
         packages = with pkgs; [
+          # Generate class-based main.css
           tailwindcss
+          # Run multiple predefined processes
           mprocs
+          # Serve static files locally
           webfs
-          grc # colorize output logs
-
           # Formatter
+          rustywind # Reorder tailwindcss classes
           nodePackages.prettier # Node.js :(
         ];
       };
